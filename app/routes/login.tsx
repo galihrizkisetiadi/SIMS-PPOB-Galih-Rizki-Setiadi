@@ -35,7 +35,7 @@ const Login = () => {
 	return (
 		<>
 			{contextHolder}
-			<div className="flex h-screen w-screen items-center justify-center gap-8 p-10 xl:p-0">
+			<div className="flex w-full items-center justify-center gap-8 px-10 xl:px-0">
 				<div className="flex flex-col items-center justify-center gap-12">
 					<div className="flex flex-col items-center justify-center gap-6">
 						<div className="flex gap-2 text-xl font-semibold">

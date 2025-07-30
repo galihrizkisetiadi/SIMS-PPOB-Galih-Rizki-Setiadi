@@ -9,11 +9,11 @@ const Home = () => {
 	const navigate = useNavigate();
 	const [messageApi, contextHolder] = message.useMessage();
 
-	useEffect(() => {
-		if (!valueToken) {
-			navigate("/login", { replace: true });
-		}
-	}, []);
+	// useEffect(() => {
+	// 	if (!valueToken) {
+	// 		navigate("/login", { replace: true });
+	// 	}
+	// }, []);
 
 	const getChecklist = async (): Promise<any> => {
 		const query = `http://94.74.86.174:8080/api/checklist`;
