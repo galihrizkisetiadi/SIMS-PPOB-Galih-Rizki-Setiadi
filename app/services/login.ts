@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { Login, Register } from "~/types/login";
 
-const baseUrl = "https://take-home-test-api.nutech-integrasi.com";
+import { baseUrl } from "~/helper";
 
 export const createRegister = async (payload: Register): Promise<any> => {
 	const query = `${baseUrl}/registration`;

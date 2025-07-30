@@ -2,10 +2,13 @@ import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration }
 
 import type { Route } from "./+types/root";
 import "./app.css";
+
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import "@ant-design/v5-patch-for-react-19";
+import store from "./store";
+import { Provider } from "react-redux";
 
 import { ConfigProvider } from "antd";
+import "@ant-design/v5-patch-for-react-19";
 
 const queryClient = new QueryClient();
 
@@ -42,17 +45,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
 	return (
-		<QueryClientProvider client={queryClient}>
-			<ConfigProvider
-				theme={{
-					token: {
-						colorPrimary: "#F3271C",
-					},
-				}}
-			>
-				<Outlet />
-			</ConfigProvider>
-		</QueryClientProvider>
+		<Provider store={store}>
+			<QueryClientProvider client={queryClient}>
+				<ConfigProvider
+					theme={{
+						token: {
+							colorPrimary: "#F3271C",
+						},
+					}}
+				>
+					<Outlet />
+				</ConfigProvider>
+			</QueryClientProvider>
+		</Provider>
 	);
 }
 

@@ -8,7 +8,7 @@ import { createRegister } from "~/services/login";
 import { FaUser } from "react-icons/fa";
 import { CiLock } from "react-icons/ci";
 
-import Logo from "../assets/logos/Logo.png";
+import Logo from "../assets/images/Logo.png";
 
 export function meta() {
 	return [{ title: "SIMS PPOB-Galih Rizki Setiadi - Register" }];

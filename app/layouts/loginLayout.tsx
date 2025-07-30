@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import type { Route } from "../+types/root";
 
-import Img from "../assets/logos/Illustrasi Login.png";
+import Img from "../assets/images/Illustrasi Login.png";
 
 export default function IndexLayout({ loaderData }: Route.ComponentProps) {
 	return (

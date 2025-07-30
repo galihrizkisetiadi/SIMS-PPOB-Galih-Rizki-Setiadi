@@ -10,3 +10,15 @@ export type Register = {
 	password: string,
 	confirmPassword: string,
 };
+
+export type UserState = {
+	email: string,
+	memberCode: string,
+	iat: string,
+	exp: string,
+}
+
+export type Credential = {
+	user: UserState | null;
+	accessToken: string;
+}

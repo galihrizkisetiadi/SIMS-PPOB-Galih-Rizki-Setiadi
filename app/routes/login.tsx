@@ -5,9 +5,12 @@ import { Button, Form, Input, type FormProps, message } from "antd";
 import type { Login } from "~/types/login";
 import { handleLogin } from "~/services/login";
 
+import { useAppDispatch } from "app/hooks";
+
 import { CiLock } from "react-icons/ci";
 
-import Logo from "../assets/logos/Logo.png";
+import Logo from "../assets/images/Logo.png";
+import { setCredentials } from "~/redux/authSlice";
 
 export function meta() {
 	return [{ title: "SIMS PPOB-Galih Rizki Setiadi - Login" }];
@@ -17,13 +20,18 @@ const Login = () => {
 	const navigate = useNavigate();
 	const [messageApi, contextHolder] = message.useMessage();
 
+	const dispatch = useAppDispatch();
+
 	const { mutateAsync, isPending } = useMutation({
 		mutationFn: handleLogin,
 		onError: (error) => {
 			messageApi.error(error.message);
 		},
-		onSuccess: async () => {
-			messageApi.info("Login Berhasil silahkan login");
+		onSuccess: async (response) => {
+			messageApi.info("Login berhasil");
+
+			dispatch(setCredentials(response.data.token as string));
+
 			await navigate("/", { replace: true });
 		},
 	});
