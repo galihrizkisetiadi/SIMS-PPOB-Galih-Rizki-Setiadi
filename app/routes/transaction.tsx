@@ -1,10 +1,12 @@
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Button, Skeleton } from "antd";
-import dayjs from "dayjs";
-import { useEffect, useState } from "react";
-import Welcome from "~/components/Welcome";
-import { dateFormatter, decimalFormat } from "~/helper";
+
 import { getHistory } from "~/services/transaction";
+
+import { dateFormatter, decimalFormat } from "~/helper";
+
+import Welcome from "~/components/Welcome";
 
 export function meta() {
 	return [{ title: "SIMS PPOB-Galih Rizki Setiadi - Transaksi" }];
