@@ -23,6 +23,29 @@ export const getBalance = async (): Promise<any> => {
 	});
 };
 
+export const getHistory = async (params: { limit: number, offset: number }): Promise<any> => {
+	const query = `${baseUrl}/transaction/history`;
+
+	const token = getToken();
+
+	return new Promise((resolve, reject) => {
+		axios
+			.get(query, {
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${token}`,
+				},
+				params,
+			})
+			.then((response) => {
+				return resolve(response.data);
+			})
+			.catch((error) => {
+				return reject(new Error(error.response.data.message as string));
+			});
+	});
+};
+
 export const handleTopUp = async (payload: number): Promise<any> => {
 	const query = `${baseUrl}/topup`;
 
