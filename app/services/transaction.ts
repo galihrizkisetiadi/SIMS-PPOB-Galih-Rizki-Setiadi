@@ -48,3 +48,29 @@ export const handleTopUp = async (payload: number): Promise<any> => {
 			});
 	});
 };
+
+export const handlePayBill = async (payload: string): Promise<any> => {
+	const query = `${baseUrl}/transaction`;
+
+	const token = getToken();
+
+	return new Promise((resolve, reject) => {
+		axios
+			.post(
+				query,
+				{ service_code: payload },
+				{
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${token}`,
+					},
+				},
+			)
+			.then((response) => {
+				return resolve(response.data);
+			})
+			.catch((error) => {
+				return reject(new Error(error.response.data.message as string));
+			});
+	});
+};
