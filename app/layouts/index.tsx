@@ -39,10 +39,10 @@ export default function IndexLayout({ loaderData }: Route.ComponentProps) {
 	return (
 		<>
 			<div className="flex items-center justify-between border-b-2 border-gray-200 py-3 text-3xl lg:px-[10rem]">
-				<div className="flex gap-2 text-lg font-bold">
+				<NavLink to={"/"} className="flex gap-2 text-lg font-bold">
 					<img src={Logo} />
 					<span>SIMS PPOB</span>
-				</div>
+				</NavLink>
 				<div className="flex gap-12 text-sm font-semibold">
 					{menus.map((menu, index) => (
 						<NavLink

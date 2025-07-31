@@ -9,6 +9,7 @@ const Banner = () => {
 	const { data, isLoading } = useQuery({
 		queryKey: ["banners"],
 		queryFn: getBanner,
+		staleTime: Infinity,
 	});
 
 	const responsive = {

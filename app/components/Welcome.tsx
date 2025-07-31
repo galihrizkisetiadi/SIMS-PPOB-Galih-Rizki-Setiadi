@@ -18,11 +18,13 @@ const Welcome = () => {
 	const { data: dataProfile, isLoading: isLoadingProfile } = useQuery({
 		queryKey: ["profile", valueUser?.memberCode],
 		queryFn: getProfile,
+		staleTime: Infinity,
 	});
 
 	const { data: dataBalance } = useQuery({
 		queryKey: ["balance", valueUser?.memberCode],
 		queryFn: getBalance,
+		staleTime: Infinity,
 	});
 
 	return (

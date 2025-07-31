@@ -7,5 +7,6 @@ export default [
 		route("topup", "routes/topup.tsx"),
 		route("transaction", "routes/transaction.tsx"),
 		route("account", "routes/account.tsx"),
+		route("bill/:service", "routes/bill.tsx"),
 	]),
 ] satisfies RouteConfig;
