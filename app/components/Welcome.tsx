@@ -47,7 +47,9 @@ const Welcome = () => {
 							></Avatar>
 							<div className="flex flex-col">
 								<span>Selamat datang, </span>
-								<span className="text-xl font-bold">{dataProfile?.data?.first_name}</span>
+								<span className="text-xl font-bold">
+									{dataProfile?.data?.first_name + " " + dataProfile?.data?.last_name}
+								</span>
 							</div>
 						</>
 					)}

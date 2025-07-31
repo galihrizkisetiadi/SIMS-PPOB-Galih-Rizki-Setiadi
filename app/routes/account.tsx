@@ -1,6 +1,6 @@
 import { useEffect, useRef, type ChangeEvent } from "react";
 import { useNavigate } from "react-router";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useLocalStorage } from "usehooks-ts";
 import { Button, Form, Input, type FormProps, message, Avatar, Skeleton } from "antd";
 
@@ -22,6 +22,7 @@ const Account = () => {
 	const navigate = useNavigate();
 	const [messageApi, contextHolder] = message.useMessage();
 	const [form] = Form.useForm();
+	const queryClient = useQueryClient();
 
 	const [valueUser, , removeValueUser] = useLocalStorage<UserState | null>("user", null);
 	const [, , removeValueToken] = useLocalStorage<string | null>("token", null);
@@ -45,6 +46,7 @@ const Account = () => {
 		},
 		onSuccess: () => {
 			messageApi.info("Update Profile Berhasil");
+			queryClient.invalidateQueries({ queryKey: ["profile"] });
 		},
 	});
 
@@ -55,6 +57,7 @@ const Account = () => {
 		},
 		onSuccess: () => {
 			messageApi.info("Update Foto Profile Berhasil");
+			queryClient.invalidateQueries({ queryKey: ["profile"] });
 			refetch();
 		},
 	});
