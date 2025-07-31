@@ -9,7 +9,7 @@ import { useAppDispatch } from "app/hooks";
 
 import { CiLock } from "react-icons/ci";
 
-import Logo from "../assets/images/Logo.png";
+import Logo from "../assets/logos/Logo.png";
 import { setCredentials } from "~/redux/authSlice";
 
 export function meta() {
