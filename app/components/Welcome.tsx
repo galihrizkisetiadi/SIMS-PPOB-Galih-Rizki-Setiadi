@@ -1,14 +1,17 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Avatar, Skeleton } from "antd";
-import { useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
+
 import { getProfile } from "~/services/profile";
+import { getBalance } from "~/services/transaction";
+
 import type { UserState } from "~/types/login";
 
-import Profile from "../assets/images/Profile Photo.png";
-import Background from "../assets/images/Background Saldo.png";
-import { getBalance } from "~/services/transaction";
 import { decimalFormat } from "~/helper";
+
+import Background from "../assets/images/Background Saldo.png";
+import Profile from "../assets/images/Profile Photo.png";
 
 const Welcome = () => {
 	const [valueUser] = useLocalStorage<UserState | null>("user", null);

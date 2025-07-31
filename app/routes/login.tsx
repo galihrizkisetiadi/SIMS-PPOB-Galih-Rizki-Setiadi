@@ -1,16 +1,17 @@
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router";
-
 import { Button, Form, Input, type FormProps, message } from "antd";
-import type { Login } from "~/types/login";
-import { handleLogin } from "~/services/login";
-
-import { useAppDispatch } from "app/hooks";
 
 import { CiLock } from "react-icons/ci";
 
-import Logo from "../assets/logos/Logo.png";
+import { useAppDispatch } from "app/hooks";
+
+import type { Login } from "~/types/login";
+import { handleLogin } from "~/services/login";
+
 import { setCredentials } from "~/redux/authSlice";
+
+import Logo from "../assets/logos/Logo.png";
 
 export function meta() {
 	return [{ title: "SIMS PPOB-Galih Rizki Setiadi - Login" }];

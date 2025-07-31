@@ -1,12 +1,12 @@
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router";
-
 import { Button, Form, Input, type FormProps, message } from "antd";
-import type { Register } from "~/types/login";
-import { createRegister } from "~/services/login";
 
 import { FaUser } from "react-icons/fa";
 import { CiLock } from "react-icons/ci";
+
+import type { Register } from "~/types/login";
+import { createRegister } from "~/services/login";
 
 import Logo from "../assets/logos/Logo.png";
 

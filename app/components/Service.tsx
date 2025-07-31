@@ -1,6 +1,7 @@
+import { NavLink } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Skeleton } from "antd";
-import { NavLink } from "react-router";
+
 import { getServices } from "~/services/service";
 
 const Service = () => {

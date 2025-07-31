@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { Image, Skeleton } from "antd";
-import { getBanner } from "~/services/service";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
+import { getBanner } from "~/services/service";
 
 const Banner = () => {
 	const { data, isLoading } = useQuery({

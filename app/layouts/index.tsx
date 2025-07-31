@@ -1,9 +1,10 @@
-import { Outlet, useNavigate, NavLink } from "react-router";
-import type { Route } from "../+types/root";
 import { useEffect, useState } from "react";
+import type { Route } from "../+types/root";
+import { Outlet, useNavigate, NavLink } from "react-router";
 import { useLocalStorage } from "usehooks-ts";
+import { Modal } from "antd";
+
 import type { UserState } from "~/types/login";
-import { Button, Modal } from "antd";
 
 import Logo from "../assets/logos/Logo.png";
 
