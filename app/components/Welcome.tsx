@@ -43,7 +43,7 @@ const Welcome = () => {
 								src={!dataProfile?.data?.profile_image.includes("null") ? dataProfile?.data?.profile_image : Profile}
 							></Avatar>
 							<div className="flex flex-col">
-								<span className="">Selamat datang, </span>
+								<span>Selamat datang, </span>
 								<span className="text-xl font-bold">{dataProfile?.data?.first_name}</span>
 							</div>
 						</>

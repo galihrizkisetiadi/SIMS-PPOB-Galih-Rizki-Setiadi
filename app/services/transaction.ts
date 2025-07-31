@@ -22,3 +22,29 @@ export const getBalance = async (): Promise<any> => {
 			});
 	});
 };
+
+export const handleTopUp = async (payload: number): Promise<any> => {
+	const query = `${baseUrl}/topup`;
+
+	const token = getToken();
+
+	return new Promise((resolve, reject) => {
+		axios
+			.post(
+				query,
+				{ top_up_amount: payload },
+				{
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${token}`,
+					},
+				},
+			)
+			.then((response) => {
+				return resolve(response.data);
+			})
+			.catch((error) => {
+				return reject(new Error(error.response.data.message as string));
+			});
+	});
+};

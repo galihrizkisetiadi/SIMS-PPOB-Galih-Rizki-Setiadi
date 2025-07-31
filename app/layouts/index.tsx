@@ -62,12 +62,12 @@ export default function IndexLayout({ loaderData }: Route.ComponentProps) {
 
 			<Modal
 				title="Sesi Login telah berakhir"
-				closable={{ "aria-label": "Custom Close Button" }}
 				open={isModalOpen}
 				onOk={async () => {
 					setIsModalOpen(false);
 					await navigate("/login", { replace: true });
 				}}
+				closable={false}
 			>
 				<p>Silahkan login kembali</p>
 			</Modal>
