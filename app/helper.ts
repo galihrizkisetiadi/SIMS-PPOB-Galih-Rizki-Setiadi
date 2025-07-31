@@ -6,7 +6,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 export const getToken = () => {
-	return localStorage.getItem("token");
+	return JSON.parse(localStorage.getItem("token") as string);
 };
 
 export const decimalFormat = (number: number) => {
