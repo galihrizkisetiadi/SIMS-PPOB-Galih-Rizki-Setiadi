@@ -30,7 +30,7 @@ const TopUp = () => {
 			setModalInfo({ isOpen: true, success: false });
 		},
 		onSuccess: () => {
-			queryClient.invalidateQueries({ queryKey: ["balance"] });
+			queryClient.invalidateQueries();
 			setModalInfo({ isOpen: true, success: true });
 		},
 	});
